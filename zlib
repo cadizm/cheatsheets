@@ -1,0 +1,3 @@
+# Decompress and then recompress
+zlib_decompress foo.json.zlib foo.json
+zlib < foo.json > foo.json.zlib

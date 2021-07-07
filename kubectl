@@ -1,0 +1,32 @@
+# Show current cluster context
+kubectl config current-context
+
+# Get avaialbe cluster contexts
+kubectl config get-contexts
+
+# Set curret cluster context
+kubectl config use-context nonprod-main-us-west-2
+
+# Get cluster namespaces
+kubectl get namespaces
+
+# Set the current context and namespace so don't have to keep passing `-n` argument
+kubectl config set-context --current --namespace=frequency-filter
+
+# Show avaiable resources
+kubectl api-resources
+
+# Describe available resources
+kubectl describe deployments
+kubectl describe pods
+kubectl describe ingresses
+
+# Get logs from all pods
+kubectl describe services
+kubectl logs -l 'app.kubernetes.io/name=frequency-filter' -c app
+kubectl logs --follow --tail=100 -l 'app.kubernetes.io/name=frequency-filter' -c app
+
+# Open a shell in a pod container
+kubectl get pods
+kubectl exec -it app-dev-static-caps-from-config-deployment-5d796ddb76-vgk86 -- bash  # defaults to app container
+kubectl exec -it frequency-filter-deployment-7f5f8d5485-5dgkg -c app bash  # use app container explicitly

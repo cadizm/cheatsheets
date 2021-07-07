@@ -1,0 +1,2 @@
+# Get all issues ever assigned to me
+assignee = currentUser() OR assignee was currentUser() ORDER BY created ASC

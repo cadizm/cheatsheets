@@ -1,0 +1,11 @@
+# Button text
+use <kbd> tags to make text appear like a button
+
+# Hide long content
+<details>
+  <summary>Title</summary>
+Body of text
+</details>
+
+# fuzzy file finder
+press `t` in any repository

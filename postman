@@ -1,0 +1,8 @@
+# send request
+cmd + return
+
+# move to prev tab
+shift + cmd + [
+
+# move to next tab
+shift + cmd + ]

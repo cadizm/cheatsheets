@@ -1,0 +1,20 @@
+# jump search
+shift, shift
+
+# find in path
+command + shift + f
+
+# find usages
+ctrl + ]
+
+# hide/show build window
+option + 2
+
+# hide/show debug window
+option + 3
+
+# build project
+cmd + 5 (can build while running in debug and reload updated class files)
+
+# run debug
+cmd + 6
