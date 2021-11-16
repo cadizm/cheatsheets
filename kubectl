@@ -30,3 +30,8 @@ kubectl logs --follow --tail=100 -l 'app.kubernetes.io/name=frequency-filter' -c
 kubectl get pods
 kubectl exec -it app-dev-static-caps-from-config-deployment-5d796ddb76-vgk86 -- bash  # defaults to app container
 kubectl exec -it frequency-filter-deployment-7f5f8d5485-5dgkg -c app bash  # use app container explicitly
+
+# Port-forward service port to local port
+$ kubectl port-forward --namespace cash-management pods/cashmanagement-funds-deployment-554cd8d7df-v4ds6 11877:11877
+# Equivalent to above
+$ kubectl port-forward -n cash-management service/cashmanagement-funds 11877:11877
