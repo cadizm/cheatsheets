@@ -1,0 +1,17 @@
+# Set up flyway.locations in flyway.conf (/usr/local/Cellar/flyway/8.0.4/libexec/conf/flyway.conf )
+flyway.locations=filesystem:/Users/michael.cadiz/workspace/src/foo/src/resources/com/foo/migrations
+
+# Print information about applied, current and pending migrations
+$ flyway -user=bob -url=jdbc:postgresql://localhost:5432/foo -driver=org.postgresql.Driver info
+
+# Repair the schema history table
+$ flyway -user=bob -url=jdbc:postgresql://localhost:5432/foo -driver=org.postgresql.Driver info
+
+# Migrate the database
+$ flyway -user=bob -url=jdbc:postgresql://localhost:5432/foo -driver=org.postgresql.Driver -placeholders.username=bob -placeholders.password=password migrate
+
+# Validate the applied migrations against the ones on the classpath
+$ flyway -user=bob -url=jdbc:postgresql://localhost:5432/foo -driver=org.postgresql.Driver validate
+
+# Undo the most recently applied versioned migration
+$ flyway -user=bob -url=jdbc:postgresql://localhost:5432/foo -driver=org.postgresql.Driver undo

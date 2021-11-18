@@ -1,0 +1,30 @@
+# Connect to local instance running on port 5432 using "postgres" db
+$ psql --host=localhost --port=5432 postgres
+
+# Get help on SQL commands
+> \h
+
+# Get help on psql commands
+> \?
+
+# List all tables
+> select * from pg_catalog.pg_tables where schemaname != 'pg_catalog' and schemaname != 'information_schema';
+
+# List roles
+> \du
+> \dg
+
+# List databases
+> \l
+
+# List schemas
+> \dn
+
+# List tables
+> \dt
+
+# Setup new role "foo", schema "bar", and db "baz"
+> CREATE ROLE foo WITH LOGIN PASSWORD 'password'
+> CREATE SCHEMA bar AUTHORIZATION foo;
+> CREATE DATABASE baz WITH OWNER foo;
+> SET search_path = bar;
