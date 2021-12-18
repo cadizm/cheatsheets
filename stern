@@ -1,0 +1,3 @@
+# Tail logs from namespace "foospace" selecting only entries with log level "error",
+# mapping output to only contain "time" and "message" keys
+stern -n foospace -o raw | jq 'select(.level == "error") | {time: .time, msg: .message}'
