@@ -1,0 +1,5 @@
+# Dump remote database matching schema and table names
+$ pg_dump --host remote-hostname --port 59397 --username foo-user db-name \
+  --data-only --schema schema-name \
+  --table schema-name.foo --table schema-name.bar --table schema-name.baz \
+  --file db.dump

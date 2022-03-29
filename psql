@@ -28,3 +28,6 @@ $ psql --host=localhost --port=5432 postgres
 > CREATE SCHEMA bar AUTHORIZATION foo;
 > CREATE DATABASE baz WITH OWNER foo;
 > SET search_path = bar;
+
+# Load local tables from pg_dump file
+$ psql --host=localhost --port=5432 --username foo-user db-name < db.dump
