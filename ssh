@@ -1,0 +1,20 @@
+# Create ssh tunnel to remote aws resource using bastion ec2 instance
+# Then access the resource in a new shell as shown below
+$ ssh -i auth.pem -N -L 59399:remote-resource-to-access.com:5432 ec2-user@ec2-bastion.compute-1.amazonaws.com -v
+Authenticated to ec2-18-206-253-3.compute-1.amazonaws.com ([18.206.253.3]:22) using "publickey".
+debug1: Local connections to LOCALHOST:59399 forwarded to remote address remote-resource-to-access.com:5432
+debug1: Local forwarding listening on ::1 port 59399.
+debug1: channel 0: new [port listener]
+debug1: Local forwarding listening on 127.0.0.1 port 59399.
+debug1: channel 1: new [port listener]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+
+$ psql --host=localhost --port=59399 --username=user db
+SET
+Time: 65.541 ms
+psql (11.15, server 11.13)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+localhost:59399 user@db=>
