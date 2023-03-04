@@ -35,3 +35,6 @@ kubectl exec -it frequency-filter-deployment-7f5f8d5485-5dgkg -c app bash  # use
 $ kubectl port-forward --namespace cash-management pods/cashmanagement-funds-deployment-554cd8d7df-v4ds6 11877:11877
 # Equivalent to above
 $ kubectl port-forward -n cash-management service/cashmanagement-funds 11877:11877
+
+# Update kubeconfig
+# See aws cheatsheet for aws update-kubeconfig command
