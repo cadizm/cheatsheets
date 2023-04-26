@@ -16,9 +16,11 @@ swap-window -t <window num>
 # swap panes
 ctrl-v, o  # (keep v pressed)
 
+# zoom pane (full screen)
+ctrl-v, z
+
 # resize panes
 ctrl-v, <arrow key>  # (keep v pressed)
-
 
 # list window information
 tmux list-windows
