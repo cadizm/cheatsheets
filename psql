@@ -31,3 +31,6 @@ $ psql --host=localhost --port=5432 postgres
 
 # Load local tables from pg_dump file
 $ psql --host=localhost --port=5432 --username foo-user db-name < db.dump
+
+# CSV output format
+> \pset format csv
