@@ -1,0 +1,3 @@
+# Pretty print the object and display it through a pager.
+# https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-page
+%page [options] OBJECT
