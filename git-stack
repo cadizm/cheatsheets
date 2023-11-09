@@ -1,0 +1,31 @@
+# Visualize branch stacks on top of their bases
+git stack
+
+# 1. Pull remote branches
+# 2. Rebase local branches onto their bases
+git stack sync
+
+# 1. Edit current commit's message
+# 2. Automatically rebase child commits
+git stack reword
+
+# 1. Squash staged changes into current commit
+# 2. Automatically rebase child commits
+git stack amend
+
+# Push all "ready" local branches to remote origin
+# A branch is ready if:
+# 1. Nothing is stacked on top of it (i.e. its parent stacks have been merged)
+# 2. Has no WIP commits
+git stack push
+
+# Rebase local branches onto their bases
+git stack --rebase
+
+# Attempt to repair stacks
+# 1. Rebase child branches onto their parents if parents have been updated
+# 2. Merge stacks that have been previously split using `git rebase`
+git stack --repair
+
+# Dump git-stack configuration
+git stack --dump-config -
